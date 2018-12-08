@@ -1,0 +1,11 @@
+// *------------------------------------*\
+// Aspire Themes Main Style
+// NÃO MUDE A ARQUITETURA DO ITCSS
+// *------------------------------------*/
+@import 'settings/settings.scss';
+@import 'tools/tools.scss';
+@import 'generic/generics.scss';
+@import 'base/base.scss';
+//atenção esses COMPONETES não são os componetes do angular e sim de elementos html
+@import 'components/components.scss';
+@import 'trumps/trumps.scss'
