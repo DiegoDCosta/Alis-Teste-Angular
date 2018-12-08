@@ -1,0 +1,3 @@
+@mixin margin($y, $x) {
+    margin: #{$y} #{$x};
+}

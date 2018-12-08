@@ -1,0 +1,3 @@
+@mixin padding($y, $x) {
+    padding: #{$y} #{$x};
+}

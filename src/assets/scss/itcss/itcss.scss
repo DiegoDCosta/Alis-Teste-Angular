@@ -8,4 +8,5 @@
 @import 'base/base.scss';
 //atenção esses COMPONETES não são os componetes do angular e sim de elementos html
 @import 'components/components.scss';
-@import 'trumps/trumps.scss'
+@import 'theme/structure';
+@import 'trumps/trumps.scss';

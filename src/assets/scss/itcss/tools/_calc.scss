@@ -17,10 +17,10 @@
 ///
 /// @example
 ///  .selector {
-///    @include x-calc(width, "600px - 2em");
+///    @include calc(width, "600px - 2em");
 ///  }
 ///
-@mixin x-calc ($property, $expression) {
-	#{$property}: -webkit-calc(#{$expression});
-	#{$property}: calc(#{$expression});
+@mixin calc ($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
 }

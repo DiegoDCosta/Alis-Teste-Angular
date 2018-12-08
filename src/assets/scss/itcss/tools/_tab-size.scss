@@ -17,10 +17,10 @@
 ///
 /// @example
 ///  .selector {
-///    @include x-tab-size(4);
+///    @include tab-size(4);
 ///   }
 ///
-@mixin x-tab-size ($value: 4) {
-	-moz-tab-size: $value;
-	     tab-size: $value;
+@mixin tab-size ($value: 4) {
+    -moz-tab-size: $value;
+    tab-size: $value;
 }

@@ -16,10 +16,10 @@
 ///
 /// @example
 ///   .selector {
-///     @include x-background-size(100% auto);
+///     @include background-size(100% auto);
 ///   }
 ///
-@mixin x-background-size ($values...) {
+@mixin background-size ($values...) {
     -webkit-background-size: $values; // For Android 2.x
-            background-size: $values;
+    background-size: $values;
 }

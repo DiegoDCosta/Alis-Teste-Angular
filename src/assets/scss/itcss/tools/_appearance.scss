@@ -19,11 +19,11 @@
 ///
 /// @example
 ///   .selector {
-///     @include x-appearance(button);
+///     @include appearance(button);
 ///   }
 ///
-@mixin x-appearance ($value) {
-	-webkit-appearance: $value;
-	   -moz-appearance: $value;
-	        appearance: $value;
+@mixin appearance ($value) {
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    appearance: $value;
 }

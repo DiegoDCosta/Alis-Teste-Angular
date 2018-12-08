@@ -16,15 +16,13 @@
 ///
 /// @example
 ///   .selector {
-///     @include x-animation(jump 1s ease-out);
+///     @include animation(jump 1s ease-out);
 ///   }
 ///
-
-@mixin x-animation ($values) {
-	-webkit-animation: $values;
-	        animation: $values;
+@mixin animation ($values) {
+    -webkit-animation: $values;
+    animation: $values;
 }
-
 
 ///
 /// Generates keyframe animations.
@@ -32,17 +30,16 @@
 /// @param {String} $name
 ///
 /// @example
-///    @include x-keyframes(jump) {
+///    @include keyframes(jump) {
 ///      from { top: 0; }
 ///      to { top: -10px; }
 ///    }
 ///
-@mixin x-keyframes ($name) {
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
-
-	@keyframes #{$name} {
-		@content;
-	}
+@mixin keyframes ($name) {
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    }
 }
