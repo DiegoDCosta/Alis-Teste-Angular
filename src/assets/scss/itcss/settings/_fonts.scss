@@ -1,0 +1,48 @@
+// CARREGA TODAS AS FONTES DO PROJETO
+@font-face {
+    font-family: 'TradeGothic-BoldCondensed';
+    src: url('#{$path-font}/TradeGothic-BoldCondensed.eot');
+    src: url('#{$path-font}/TradeGothic-BoldCondensed.eot?#iefix') format('embedded-opentype'),
+    url('#{$path-font}/TradeGothic-BoldCondensed.woff2') format('woff2'),
+    url('#{$path-font}/TradeGothic-BoldCondensed.woff') format('woff'),
+    url('#{$path-font}/TradeGothic-BoldCondensed.ttf') format('truetype'),
+    url('#{$path-font}/TradeGothic-BoldCondensed.svg#TradeGothic-BoldCondensed') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TradeGothic-BoldCondensedOblique';
+    src: url('#{$path-font}/TradeGothic-BoldCondensedOblique.eot');
+    src: url('#{$path-font}/TradeGothic-BoldCondensedOblique.eot?#iefix') format('embedded-opentype'),
+    url('#{$path-font}/TradeGothic-BoldCondensedOblique.woff2') format('woff2'),
+    url('#{$path-font}/TradeGothic-BoldCondensedOblique.woff') format('woff'),
+    url('#{$path-font}/TradeGothic-BoldCondensedOblique.ttf') format('truetype'),
+    url('#{$path-font}/TradeGothic-BoldCondensedOblique.svg#TradeGothic-BoldCondensedOblique') format('svg');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'TradeGothic';
+    src: url('#{$path-font}/TradeGothic.eot');
+    src: url('#{$path-font}/TradeGothic.eot?#iefix') format('embedded-opentype'),
+    url('#{$path-font}/TradeGothic.woff2') format('woff2'),
+    url('#{$path-font}/TradeGothic.woff') format('woff'),
+    url('#{$path-font}/TradeGothic.ttf') format('truetype'),
+    url('#{$path-font}/TradeGothic.svg#TradeGothic') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TradeGothic-Bold';
+    src: url('#{$path-font}/TradeGothic-Bold.eot');
+    src: url('#{$path-font}/TradeGothic-Bold.eot?#iefix') format('embedded-opentype'),
+    url('#{$path-font}/TradeGothic-Bold.woff2') format('woff2'),
+    url('#{$path-font}/TradeGothic-Bold.woff') format('woff'),
+    url('#{$path-font}/TradeGothic-Bold.ttf') format('truetype'),
+    url('#{$path-font}/TradeGothic-Bold.svg#TradeGothic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}

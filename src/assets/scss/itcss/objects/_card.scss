@@ -1,0 +1,11 @@
+.card {
+    @include flexbox;
+    //colocar background full screnn
+    // colocar opacidade no bg
+    .card__header {
+        @include flexbox;
+    }
+    .card__content {}
+    .card__titulo-main {}
+    .card__titulo-secundary {}
+}
