@@ -1,7 +1,13 @@
+.card--marvel {
+    .card-title {
+        min-height: 100px;
+    }
+}
+
 .card--marvel-pic {
     @include flexbox;
+    @include background-size(cover);
     width: 100%;
     min-height: 250px;
-    @include background-size(cover);
     background-position: center center;
 }
