@@ -1,5 +1,8 @@
-@import 'assets/scss/itcss/itcss.scss';
-p {
-    font-family: TradeGothic;
-    font-size: 30px
-}
+@import "./assets/scss/tools/tools.scss";
+@import "./assets/scss/paths";
+@import "./assets/scss/fonts";
+//import all components angular
+@import "./assets/scss/components/components.scss";
+//import material design
+//@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+//@import "../node_modules/materialize-css/dist/css/materialize.min.css"

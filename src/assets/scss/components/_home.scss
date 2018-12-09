@@ -1,0 +1,7 @@
+.card--marvel-pic {
+    @include flexbox;
+    width: 100%;
+    min-height: 250px;
+    @include background-size(cover);
+    background-position: center center;
+}
