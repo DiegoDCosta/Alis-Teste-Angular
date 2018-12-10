@@ -1,0 +1,23 @@
+<section class="personagem__detalhe">
+    <div class="col s12">
+        <div class="personagem__detalhe__bg">
+            <!-- BTN voltar -->
+            <div class="personagem__detalhe__voltar">
+                <a [routerLink]="['/']" class="btn-floating pulse">
+                    <i class="large material-icons">arrow_back</i></a>
+            </div>
+            <!-- detalhe do personagem apenas uma foto com 2 textos -->
+            <div class="personagem__detalhe__pic">
+                <img src="https://via.placeholder.com/150" alt="" class="circle responsive-img">
+                <p>Nome do personagem</p>
+                <p>Alguma informação com fonte menor (se precisar)</p>
+            </div>
+            <!-- Opções de ver mais detalhes em abas -->
+            <mat-tab-group mat-align-tabs="center">
+                <mat-tab label="First"> Content 1 </mat-tab>
+                <mat-tab label="Second"> Content 2 </mat-tab>
+                <mat-tab label="Third"> Content 3 </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</section>

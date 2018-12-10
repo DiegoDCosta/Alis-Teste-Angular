@@ -1,4 +1,5 @@
 .card--marvel {
+    @include margin(.7rem, .7rem);
     .card-title {
         min-height: 100px;
     }
