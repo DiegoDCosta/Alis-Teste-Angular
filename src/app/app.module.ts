@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { routing } from './routes';
 
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import { PersonagemBuscaComponent } from './personagem-busca/personagem-busca.co
     MaterialModule,
     HttpClientModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     routing,
     BrowserAnimationsModule
   ],
