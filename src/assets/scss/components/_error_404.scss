@@ -1,0 +1,7 @@
+.error_404 {
+    @include flexbox;
+    @include calc(height, "100vh - 6vh");
+    width: 100vw;
+    background: url('#{$path-img}/404.png') no-repeat center center;
+    overflow-y: hidden;
+}

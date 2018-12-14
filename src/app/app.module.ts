@@ -4,6 +4,7 @@ import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
 import { routing } from './routes';
 
 import { AppComponent } from './app.component';
@@ -19,7 +20,7 @@ import { PersonagemBuscaComponent } from './personagem-busca/personagem-busca.co
     HomeComponent,
     Error404Component,
     PersonagemDetalheComponent,
-    PersonagemBuscaComponent
+    PersonagemBuscaComponent,
   ],
   imports: [
     HttpModule,
@@ -29,7 +30,8 @@ import { PersonagemBuscaComponent } from './personagem-busca/personagem-busca.co
     FormsModule,
     ReactiveFormsModule,
     routing,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { switchMap } from 'rxjs/operators';
+import { NgxSpinnerService } from 'ngx-spinner';
 
-import { MarvelService } from '../_services/marvel.service'
+import { MarvelService } from '../_services/marvel.service';
 import { Personagem } from "../_models/personagem";
 
 
@@ -20,12 +21,16 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private marvelService:MarvelService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private spinner: NgxSpinnerService
   ) {
 
   }
 
   ngOnInit() {
+    /** spinner starts on init */
+    this.spinner.show();
+
     this.campoDeBusca = this.fb.control('');
     this.formBusca = this.fb.group({
       campoDeBusca: this.campoDeBusca
@@ -40,6 +45,7 @@ export class HomeComponent implements OnInit {
     return this.marvelService.getPersonagens().subscribe(
       (response => {
         this.personagens = response;
+        this.spinner.hide();
         console.log(response);
       })
     )
@@ -51,8 +57,9 @@ export class HomeComponent implements OnInit {
         name => this.marvelService.buscaPersonagens(this.campoDeBusca.value)
       )
     ).subscribe(
+
       (response => {
-        this.personagens = response
+        this.personagens = response;
         console.log('buscou?',response);
       })
     )
