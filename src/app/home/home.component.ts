@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { switchMap } from 'rxjs/operators';
 
 import { MarvelService } from '../_services/marvel.service'
 import { Personagem } from "../_models/personagem";
-import { switchMap } from 'rxjs/operators';
-
 
 
 @Component({
@@ -57,25 +56,5 @@ export class HomeComponent implements OnInit {
         console.log('buscou?',response);
       })
     )
-
-
-
-    /*
-    return this.marvelService.buscaPersonagens("Wolverine").subscribe(
-      (response => {
-        console.log('buscou?',response);
-      })
-    )*/
   }
-
-/*
-  TesteBusca(){
-    return this.marvelService.testeBusca().subscribe(
-      (response => {
-        this.personagens = response;
-        console.log('teste', response);
-      })
-    )
-  }
-*/
 }

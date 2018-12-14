@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Md5 } from "ts-md5/dist/md5";
 import { environment } from "../../environments/environment";
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
+import { map} from "rxjs/operators";
 
 import { Personagem } from "../_models/personagem";
 
@@ -38,10 +38,7 @@ export class MarvelService {
       );
   }
 
-
-
-  //metodo de busca
-
+  //metodo de busca, criado outro método, pois a endpoint muda
   buscaPersonagens(term?:string): Observable<any> {
     return this.http
       .get<any>(
