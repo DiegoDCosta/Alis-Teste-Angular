@@ -32,7 +32,6 @@ export class BuscaComponent implements OnInit {
 
   }
 
-
   buscarPersonagem(){
     this.campoDeBusca.valueChanges.pipe(
       switchMap(

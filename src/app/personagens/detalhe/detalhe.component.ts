@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Personagem } from "../../_models/personagem";
+
+import { MarvelService } from '../../_services/marvel.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+
 
 @Component({
   selector: 'app-detalhe',
@@ -7,9 +13,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalheComponent implements OnInit {
 
-  constructor() { }
+  public detalhes: Personagem[];
+
+  constructor(
+    private marvelService: MarvelService,
+    private spinner: NgxSpinnerService,
+    private router: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+
+    this.marvelService.getPersonagemID(this.router.snapshot.params[`id`])
+      .subscribe(response => this.detalhes = response);
+
   }
 
 }

@@ -8,7 +8,7 @@
               {{ personagem.name }} <i class="material-icons right">more_vert</i>
             </span>
             <p>
-                <a [routerLink]="['/detalhe']">Detalhes</a>
+                <a [routerLink]="['/detalhe', personagem.id]" routerLinkActive="router-link-active">Detalhes</a>
             </p>
         </div>
         <div class="card-reveal">

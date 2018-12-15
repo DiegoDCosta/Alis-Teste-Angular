@@ -49,4 +49,22 @@ export class MarvelService {
         })
       );
   }
+
+  //https://gateway.marvel.com:443/v1/public/characters/1011334?apikey=399252e317d7557e0a22b326084ab614
+  // personagem por id
+  //getPersonagens
+  getPersonagemID(id: number): Observable<Personagem[]> {
+    return this.http
+      .get<Personagem[]>(
+        `${environment.MarvelEndpointCaracters+id}?&ts=${this.timeStamp}&apikey=${
+          environment.PublicKey
+        }&hash=${this.hash}`
+      )
+      .pipe(
+        map(response => {
+          console.log('personagem por ID ->' ,response)
+          return (response as any).data.results;
+        })
+      );
+  }
 }
