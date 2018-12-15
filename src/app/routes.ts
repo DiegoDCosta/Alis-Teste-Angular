@@ -2,13 +2,13 @@ import { Routes, RouterModule } from "@angular/router";
 import { ModuleWithProviders } from "@angular/compiler/src/core";
 
 import { Error404Component } from "./error404/error404.component";
-import { PersonagemDetalheComponent } from "./personagem-detalhe/personagem-detalhe.component";
-import { HomeComponent } from "./home/home.component";
+import { DetalheComponent } from "./personagens/detalhe/detalhe.component";
+import { PersonagensComponent } from "./personagens/personagens.component";
 
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
-  { path: "detalhe", component: PersonagemDetalheComponent },
+  { path: "", component: PersonagensComponent },
+  { path: "detalhe", component: DetalheComponent },
   { path: "**", component: Error404Component }
 ];
 

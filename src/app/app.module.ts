@@ -8,19 +8,21 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { routing } from './routes';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { Error404Component } from './error404/error404.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PersonagemDetalheComponent } from './personagem-detalhe/personagem-detalhe.component';
-import { PersonagemBuscaComponent } from './personagem-busca/personagem-busca.component';
+import { PersonagensComponent } from './personagens/personagens.component';
+import { PersonagemComponent } from './personagens/personagem/personagem.component';
+import { BuscaComponent } from './personagens/busca/busca.component';
+import { DetalheComponent } from './personagens/detalhe/detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     Error404Component,
-    PersonagemDetalheComponent,
-    PersonagemBuscaComponent,
+    PersonagensComponent,
+    PersonagemComponent,
+    BuscaComponent,
+    DetalheComponent
   ],
   imports: [
     HttpModule,

@@ -1,0 +1,18 @@
+<section class="personagem__busca">
+    <div class="col s12">
+        <form [formGroup]="formBusca">
+            <input type="text" formControlName="campoDeBusca" value="" />
+        </form>
+    </div>
+</section>
+
+
+<section class="personagem__busca__resultado">
+    <ul class="collection">
+        <li class="collection-item avatar" *ngFor="let p of personagemResult">
+            <img src="{{p.thumbnail.path}}.{{p.thumbnail.extension}}" alt="" class="circle">
+            <span class="title">{{p.name}}</span>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+    </ul>
+</section>
