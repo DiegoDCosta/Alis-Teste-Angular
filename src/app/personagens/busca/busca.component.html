@@ -1,24 +1,29 @@
-<section class="personagem__busca">
-    <div class="col s12">
-        <form [formGroup]="formBusca">
-            <div class="input-field col s12">
-                <input type="text" id="buscaPersonagem" placeholder="Buscar Personagem" formControlName="campoDeBusca" value="" />
-            </div>
-        </form>
-    </div>
-</section>
-
-<!-- MOSTRA O THUMBNAIL DA BUSCA -->
-<section class="personagem__busca__resultado">
+<section id="busca__component" class="container">
     <div class="row">
-        <div class="col s12">
-            <ul class="collection">
-                <li class="collection-item avatar" *ngFor="let personagem of personagemResult">
-                    <img src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="" class="circle">
-                    <span class="title">{{personagem.name}}</span>
-                    <a [routerLink]="['/detalhe', personagem.id]" class="secondary-content ver__detalhe"><i class="material-icons">arrow_forward</i></a>
-                </li>
-            </ul>
-        </div>
+        <!-- BUSCA DE PERSONAGEM -->
+        <section class="personagem__busca">
+            <div class="col s12">
+                <form [formGroup]="formBusca">
+                    <div class="input-field col s12">
+                        <input type="text" id="buscaPersonagem" placeholder="Buscar Personagem" formControlName="campoDeBusca" value="" />
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- MOSTRA O THUMBNAIL DA BUSCA -->
+        <section class="personagem__busca__resultado">
+            <div class="row">
+                <div class="col s12">
+                    <ul class="collection">
+                        <li class="collection-item avatar" *ngFor="let personagem of personagemResult">
+                            <img src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="" class="circle">
+                            <span class="title">{{personagem.name}}</span>
+                            <a [routerLink]="['/detalhe', personagem.id]" class="secondary-content ver__detalhe"><i class="material-icons">arrow_forward</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </div>
 </section>

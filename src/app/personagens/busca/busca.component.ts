@@ -35,7 +35,7 @@ export class BuscaComponent implements OnInit {
   buscarPersonagem(){
     this.campoDeBusca.valueChanges.pipe(
       switchMap(
-        name => this.marvelService.buscaPersonagens(this.campoDeBusca.value)
+        ()=> this.marvelService.buscaPersonagens(this.campoDeBusca.value)
       )
     ).subscribe(
       (response => {

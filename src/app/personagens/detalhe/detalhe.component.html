@@ -1,73 +1,61 @@
-<section class="personagem__detalhe">
-    <div class="col s10 offset-s1">
-        <div class="personagem__detalhe__bg" *ngFor=" let detalhe of detalhes ">
-            <div class="row ">
-                <div class="col s4 ">
-                    <!-- btn voltar -->
-                    <div class="personagem__detalhe__voltar ">
-                        <a [routerLink]="[ '/'] " class="btn-floating pulse ">
-                            <i class="large material-icons ">arrow_back</i></a>
-                    </div>
-                </div>
-                <div class="col s4 ">
-                    <div class="personagem__detalhe__perfil ">
-                        Perfil
-                    </div>
-                </div>
-                <div class="col s4 ">
-                    <div class="personagem__detalhe__plus ">
-                        <a class="btn-floating "><i class="material-icons ">add</i></a>
-                    </div>
-                </div>
-            </div>
+<section id="detalhe__component" class="container-fluid">
+    <div class="personagem__detalhe__bg" *ngFor="let detalhe of detalhes" [ngStyle]="{'background-image': 'url(' + detalhe.thumbnail.path +'.'+detalhe.thumbnail.extension + ')'}"></div>
+</section>
 
-            <div class="row ">
-                <div class="col s12 center-align ">
-                    <!-- detalhe do personagem apenas uma foto com 2 textos -->
-                    <div class="personagem__detalhe__pic ">
-                        <img src="{{detalhe.thumbnail.path}}.{{detalhe.thumbnail.extension}} " alt=" " class="circle responsive-img profile_pic ">
-                        <p> {{ detalhe.name }} </p>
-                        <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
-                        <p> {{ detalhe.description }} </p>
-                    </div>
-                </div>
+<section id="detalhe__component-perfil" class="container">
+    <div class="row ">
+        <div class="col s1">
+            <!-- btn voltar -->
+            <div class="personagem__detalhe__voltar ">
+                <a [routerLink]="[ '/'] " class="btn-floating pulse ">
+                    <i class="large material-icons ">arrow_back</i></a>
             </div>
-
-
-            <!-- abas detalhes -->
-            <div class="row">
-                <div class="cols 12">
-                    <mat-tab-group mat-align-tabs="center">
-                        <mat-tab label="Series">
-                            <ng-template mat-tab-label *ngFor="let comic of comics">
-                                <span matBadge="{{comic.series.available}}" matBadgeOverlap="false">Series</span>
-                            </ng-template>
-                            <h1>séries</h1>
-                            <p *ngFor="let series of  detalhe.series.items">
-                                <mat-card>{{ series.name }}</mat-card>
-                            </p>
-                        </mat-tab>
-                        <mat-tab label="Comics">
-                            <ng-template mat-tab-label *ngFor="let comic of comics">
-                                <span matBadge="{{comic.comics.available}}" matBadgePosition="above " matBadgeOverlap="false">Comics</span>
-                            </ng-template>
-                            <h1>Comics</h1>
-                            <p *ngFor="let comics of  detalhe.comics.items">
-                                <mat-card>{{ comics.name }} </mat-card>
-                            </p>
-                        </mat-tab>
-                        <mat-tab label="Stories">
-                            <ng-template mat-tab-label *ngFor="let comic of comics">
-                                <span matBadge="{{comic.stories.available}}" matBadgeOverlap="false">Stories</span>
-                            </ng-template>
-                            <h1>Stories</h1>
-                            <p *ngFor="let stories of  detalhe.stories.items">
-                                <mat-card> {{ stories.name }} </mat-card>
-                            </p>
-                        </mat-tab>
-                    </mat-tab-group>
-                </div>
+        </div>
+        <div class="col s10 center-align ">
+            <!-- detalhe do personagem apenas uma foto com 2 textos -->
+            <div class="personagem__detalhe__pic" *ngFor="let detalhe of detalhes">
+                <img src="{{detalhe.thumbnail.path}}.{{detalhe.thumbnail.extension}} " alt=" " class="circle responsive-img profile_pic ">
+                <p> {{ detalhe.name }} </p>
+                <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
+                <p> {{ detalhe.description }} </p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="detalhe__component-tabs" class="container">
+    <!-- abas detalhes -->
+    <div class="row">
+        <div class="cols 12">
+            <mat-tab-group mat-align-tabs="center" *ngFor="let detalhe of detalhes">
+                <mat-tab label="Series">
+                    <ng-template mat-tab-label *ngFor="let comic of detalhes ">
+                        <span matBadge="{{comic.series.available}}" matBadgeOverlap="false">Series</span>
+                    </ng-template>
+                    <h1>séries</h1>
+                    <p *ngFor="let series of  detalhe.series.items">
+                        <mat-card>{{ series.name }}</mat-card>
+                    </p>
+                </mat-tab>
+                <mat-tab label="Comics">
+                    <ng-template mat-tab-label *ngFor="let comic of detalhes">
+                        <span matBadge="{{comic.comics.available}}" matBadgePosition="above " matBadgeOverlap="false">Comics</span>
+                    </ng-template>
+                    <h1>Comics</h1>
+                    <p *ngFor="let comics of  detalhe.comics.items">
+                        <mat-card>{{ comics.name }} </mat-card>
+                    </p>
+                </mat-tab>
+                <mat-tab label="Stories">
+                    <ng-template mat-tab-label *ngFor="let comic of detalhes">
+                        <span matBadge="{{comic.stories.available}}" matBadgeOverlap="false">Stories</span>
+                    </ng-template>
+                    <h1>Stories</h1>
+                    <p *ngFor="let stories of  detalhe.stories.items">
+                        <mat-card> {{ stories.name }} </mat-card>
+                    </p>
+                </mat-tab>
+            </mat-tab-group>
         </div>
     </div>
 </section>

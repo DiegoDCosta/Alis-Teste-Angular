@@ -1,4 +1,8 @@
 <app-busca></app-busca>
-<div *ngFor="let personagem of personagens">
-    <app-personagem [personagem]="personagem"></app-personagem>
-</div>
+<section class="container" id="cards__components">
+    <div class="row">
+        <div *ngFor="let personagem of personagens">
+            <app-personagem [personagem]="personagem"></app-personagem>
+        </div>
+    </div>
+</section>

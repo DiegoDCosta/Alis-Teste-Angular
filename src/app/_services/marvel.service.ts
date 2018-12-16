@@ -42,7 +42,7 @@ export class MarvelService {
   buscaPersonagens(term?:string): Observable<any> {
     return this.http
       .get<any>(
-        `${environment.MarvelEndpoint}name=${term}&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
+        `${environment.MarvelEndpoint}nameStartsWith=${term}&orderBy=name&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
       .pipe(
         map(response => {
           return (response as any).data.results;
@@ -68,6 +68,10 @@ export class MarvelService {
       );
   }
 
+  /*
+  //
+  // REMOVIDO PARA MELHORAR A PERFORMANCE DA CONSULTA POIS getPersonagemID(), JÁ CONTÉM AS MESMAS INFORMAÇÕES
+  //
   getComics(id: number, comics:string): Observable<Personagem[]> {
     return this.http
       .get<Personagem[]>(
@@ -81,5 +85,5 @@ export class MarvelService {
         })
       );
   }
-
+*/
 }
