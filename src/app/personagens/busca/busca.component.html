@@ -9,10 +9,10 @@
 
 <section class="personagem__busca__resultado">
     <ul class="collection">
-        <li class="collection-item avatar" *ngFor="let p of personagemResult">
-            <img src="{{p.thumbnail.path}}.{{p.thumbnail.extension}}" alt="" class="circle">
-            <span class="title">{{p.name}}</span>
-            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        <li class="collection-item avatar" *ngFor="let personagem of personagemResult">
+            <img src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="" class="circle">
+            <span class="title">{{personagem.name}}</span>
+            <a [routerLink]="['/detalhe', personagem.id]" class="secondary-content"><i class="material-icons">grade</i></a>
         </li>
     </ul>
 </section>

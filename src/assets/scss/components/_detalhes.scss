@@ -1,0 +1,28 @@
+.personagem__detalhe {}
+
+.personagem__detalhe__bg {}
+
+.personagem__detalhe__voltar {
+    @extend .personagem__detalhe__perfil;
+}
+
+.personagem__detalhe__plus {
+    @extend .personagem__detalhe__perfil;
+}
+
+.personagem__detalhe__perfil {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+}
+
+.personagem__detalhe__pic {
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-direction(column);
+    .profile_pic {
+        width: 150px;
+        height: 150px;
+    }
+}

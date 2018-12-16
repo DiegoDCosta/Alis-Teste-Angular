@@ -22,10 +22,16 @@ export class DetalheComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.marvelService.getPersonagemID(this.router.snapshot.params[`id`])
-      .subscribe(response => this.detalhes = response);
-
+    this.spinner.show(); //loading
+    this.getPersonagemById();
   }
 
+  getPersonagemById(){
+    this.marvelService.getPersonagemID(this.router.snapshot.params[`id`])
+    .subscribe(response => {
+      this.detalhes = response
+      console.log(response)
+    });
+    this.spinner.hide(); //loading
+  }
 }
