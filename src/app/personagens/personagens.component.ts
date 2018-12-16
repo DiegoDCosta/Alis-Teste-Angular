@@ -12,7 +12,7 @@ import { Personagem } from "../_models/personagem";
 })
 export class PersonagensComponent implements OnInit {
 
-  public personagens:Personagem[];
+  public personagens:Personagem[]
 
   constructor(
     private marvelService:MarvelService,
@@ -28,7 +28,7 @@ export class PersonagensComponent implements OnInit {
       (response => {
         this.personagens = response;
         this.spinner.hide();
-        console.log(response);
+        console.log(response)
       })
     )
   }

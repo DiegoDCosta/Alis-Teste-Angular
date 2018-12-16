@@ -67,4 +67,19 @@ export class MarvelService {
         })
       );
   }
+
+  getComics(id: number, comics:string): Observable<Personagem[]> {
+    return this.http
+      .get<Personagem[]>(
+        `${environment.MarvelEndpointCaracters+id}${comics}?&ts=${this.timeStamp}&apikey=${
+          environment.PublicKey
+        }&hash=${this.hash}`
+      )
+      .pipe(
+        map(response => {
+          return (response as any).data.results;
+        })
+      );
+  }
+
 }

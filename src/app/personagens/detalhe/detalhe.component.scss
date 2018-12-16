@@ -1,0 +1,13 @@
+//css dos components usados para resets do próprio component
+.mat-badge-medium .mat-badge-content {
+    width: auto;
+    height: auto;
+    right: -50px;
+    padding: 0 5px;
+    /* Safari 3-4, iOS 1-3.2, Android 1.6- */
+    -webkit-border-radius: 0px;
+    /* Firefox 1-3.6 */
+    -moz-border-radius: 0px;
+    /* Opera 10.5, IE 9, Safari 5, Chrome, Firefox 4, iOS 4, Android 2.1+ */
+    border-radius: 0px;
+}
