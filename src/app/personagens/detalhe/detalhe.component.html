@@ -32,7 +32,6 @@
                     <ng-template mat-tab-label *ngFor="let comic of detalhes ">
                         <span matBadge="{{comic.series.available}}" matBadgeOverlap="false">Series</span>
                     </ng-template>
-                    <h1>séries</h1>
                     <p *ngFor="let series of  detalhe.series.items">
                         <mat-card>{{ series.name }}</mat-card>
                     </p>
@@ -41,7 +40,6 @@
                     <ng-template mat-tab-label *ngFor="let comic of detalhes">
                         <span matBadge="{{comic.comics.available}}" matBadgePosition="above " matBadgeOverlap="false">Comics</span>
                     </ng-template>
-                    <h1>Comics</h1>
                     <p *ngFor="let comics of  detalhe.comics.items">
                         <mat-card>{{ comics.name }} </mat-card>
                     </p>
@@ -50,7 +48,6 @@
                     <ng-template mat-tab-label *ngFor="let comic of detalhes">
                         <span matBadge="{{comic.stories.available}}" matBadgeOverlap="false">Stories</span>
                     </ng-template>
-                    <h1>Stories</h1>
                     <p *ngFor="let stories of  detalhe.stories.items">
                         <mat-card> {{ stories.name }} </mat-card>
                     </p>
