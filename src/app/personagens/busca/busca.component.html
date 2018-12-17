@@ -12,7 +12,7 @@
         </section>
 
         <!-- MOSTRA O THUMBNAIL DA BUSCA -->
-        <section class="personagem__busca__resultado">
+        <section *ngIf="campoDeBusca.value != ''" class="personagem__busca__resultado">
             <div class="row">
                 <div class="col s12">
                     <ul class="collection">
