@@ -15,7 +15,7 @@
             <!-- detalhe do personagem apenas uma foto com 2 textos -->
             <div class="personagem__detalhe__pic" *ngFor="let detalhe of detalhes">
                 <img src="{{detalhe.thumbnail.path}}.{{detalhe.thumbnail.extension}} " alt=" " class="circle responsive-img profile_pic ">
-                <p> {{ detalhe.name }} </p>
+                <p class="personagem__detalhe__name"> {{ detalhe.name }} </p>
                 <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
                 <p> {{ detalhe.description }} </p>
             </div>
