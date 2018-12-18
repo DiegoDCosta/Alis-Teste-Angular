@@ -11,48 +11,83 @@
                     <i class="large material-icons ">arrow_back</i></a>
             </div>
         </div>
-        <div class="col s10 center-align ">
-            <!-- detalhe do personagem apenas uma foto com 2 textos -->
-            <div class="personagem__detalhe__pic" *ngFor="let detalhe of detalhes">
-                <img src="{{detalhe.thumbnail.path}}.{{detalhe.thumbnail.extension}} " alt=" " class="circle responsive-img profile_pic ">
-                <p class="personagem__detalhe__name"> {{ detalhe.name }} </p>
-                <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
-                <p> {{ detalhe.description }} </p>
-            </div>
-        </div>
     </div>
 </section>
 
-<section id="detalhe__component-tabs" class="container">
-    <!-- abas detalhes -->
+<section class="detalhe__componente__item">
     <div class="row">
-        <div class="cols 12">
-            <mat-tab-group mat-align-tabs="center" *ngFor="let detalhe of detalhes">
-                <mat-tab label="Series">
-                    <ng-template mat-tab-label *ngFor="let comic of detalhes ">
-                        <span matBadge="{{comic.series.available}}" matBadgeOverlap="false">Series</span>
-                    </ng-template>
-                    <p *ngFor="let series of  detalhe.series.items">
-                        <mat-card>{{ series.name }}</mat-card>
-                    </p>
-                </mat-tab>
-                <mat-tab label="Comics">
-                    <ng-template mat-tab-label *ngFor="let comic of detalhes">
-                        <span matBadge="{{comic.comics.available}}" matBadgePosition="above " matBadgeOverlap="false">Comics</span>
-                    </ng-template>
-                    <p *ngFor="let comics of  detalhe.comics.items">
-                        <mat-card>{{ comics.name }} </mat-card>
-                    </p>
-                </mat-tab>
-                <mat-tab label="Stories">
-                    <ng-template mat-tab-label *ngFor="let comic of detalhes">
-                        <span matBadge="{{comic.stories.available}}" matBadgeOverlap="false">Stories</span>
-                    </ng-template>
-                    <p *ngFor="let stories of  detalhe.stories.items">
-                        <mat-card> {{ stories.name }} </mat-card>
-                    </p>
-                </mat-tab>
-            </mat-tab-group>
+
+        <!-- coluna 1 -->
+        <div class="col s12 l3">
+            <div class="card card--marvel" *ngFor="let detalhe of detalhes">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <div class="card--marvel-pic" [ngStyle]="{'background-image': 'url(' + detalhe.thumbnail.path +'.'+detalhe.thumbnail.extension + ')'}"></div>
+                </div>
+                <div class="card-content">
+                    <div class="row">
+                        <div class="card-badge">
+                            <a href="" class="card-badge-btn waves-effect yellow accent-4">No. Series: ?</a>
+                            <a href="" class="card-badge-btn waves-effect badge amber accent-3">No. Comics: ?</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="card-badge">
+                            <span class="card-badge-btn waves-effect yellow accent-4">Series</span>
+                            <span href="" class="card-badge-btn waves-effect badge amber accent-3">Comics</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
+                        <p> {{ detalhe.description }} </p>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> {{ detalhe.name }} <i class="material-icons right">close</i></span>
+                    <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
+                    <p>{{ detalhe?.description }}</p>
+                    <p>Número de série(s): {{ detalhe.series.available }}</p>
+                    <p>Quadrinhos: {{ detalhe.comics.available }}</p>
+                </div>
+            </div>
+        </div>
+        <!-- coluna 2 -->
+        <div class="col s12 l5">
+            <!-- COMICS -->
+            <ul class="collection with-header" *ngFor="let detalhe of detalhes">
+                <li class="collection-header">
+                    <h4>Comics</h4>
+                </li>
+                <div class=" collection-scrool">
+                    <li class="collection-item" *ngFor="let comic of  detalhe.comics.items">
+                        <a class="collection-item-link" (click)="teste(comic.resourceURI)">
+                            {{comic.name}}
+                        </a>
+                    </li>
+                </div>
+            </ul>
+            <!-- SERIES -->
+            <ul class="collection with-header" *ngFor="let detalhe of detalhes">
+                <li class="collection-header">
+                    <h4>Series</h4>
+                </li>
+                <div class=" collection-scrool">
+
+                    <li class="collection-item" *ngFor="let serie of  detalhe.series.items">
+                        <a (click)="teste(serie.resourceURI)" class="collection-item-link">
+                            {{serie.name}}
+                        </a>
+                    </li>
+                </div>
+            </ul>
+        </div>
+        <!-- coluna 3 -->
+        <div class="col s12 l4">
+            <div class="comics__cover">
+                <img class="card-img" *ngIf="dataImage != null" [src]=" dataImage " class="responsive-img">
+            </div>
+            <div class="comics__description">
+                {{ dataDescription }}
+            </div>
         </div>
     </div>
 </section>

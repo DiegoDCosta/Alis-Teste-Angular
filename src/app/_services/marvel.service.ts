@@ -27,7 +27,7 @@ export class MarvelService {
   getPersonagens(): Observable<Personagem[]> {
     return this.http
       .get<Personagem[]>(
-        `${environment.MarvelEndpoint}&ts=${this.timeStamp}&apikey=${
+        `${environment.MarvelEndpoint}/characters?&ts=${this.timeStamp}&apikey=${
           environment.PublicKey
         }&hash=${this.hash}`
       )
@@ -39,12 +39,14 @@ export class MarvelService {
   }
 
   //metodo de busca, criado outro método, pois a endpoint muda
+  // https://gateway.marvel.com:443/v1/public/characters?nameStartsWith=spid&apikey=399252e317d7557e0a22b326084ab614
   buscaPersonagens(term?:string): Observable<any> {
     return this.http
       .get<any>(
-        `${environment.MarvelEndpoint}nameStartsWith=${term}&orderBy=name&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
+        `${environment.MarvelEndpoint}/characters?nameStartsWith=${term}&orderBy=name&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
       .pipe(
         map(response => {
+          console.log(response)
           return (response as any).data.results;
         })
       );
@@ -56,7 +58,7 @@ export class MarvelService {
   getPersonagemID(id: number): Observable<Personagem[]> {
     return this.http
       .get<Personagem[]>(
-        `${environment.MarvelEndpointCaracters+id}?&ts=${this.timeStamp}&apikey=${
+        `${environment.MarvelEndpoint}/characters/${id}?&ts=${this.timeStamp}&apikey=${
           environment.PublicKey
         }&hash=${this.hash}`
       )
@@ -68,14 +70,12 @@ export class MarvelService {
       );
   }
 
-  /*
-  //
-  // REMOVIDO PARA MELHORAR A PERFORMANCE DA CONSULTA POIS getPersonagemID(), JÁ CONTÉM AS MESMAS INFORMAÇÕES
-  //
+  //pega o comic por id do personagem
+  //https://gateway.marvel.com:443/v1/public/characters/1011114/comics?format=comic&apikey=399252e317d7557e0a22b326084ab614
   getComics(id: number, comics:string): Observable<Personagem[]> {
     return this.http
       .get<Personagem[]>(
-        `${environment.MarvelEndpointCaracters+id}${comics}?&ts=${this.timeStamp}&apikey=${
+        `${environment.MarvelEndpoint}/characters/${id}/${comics}?&ts=${this.timeStamp}&apikey=${
           environment.PublicKey
         }&hash=${this.hash}`
       )
@@ -85,5 +85,12 @@ export class MarvelService {
         })
       );
   }
-*/
+
+  getPersonagemComic(url) {
+    return this.http.get(`${url}?&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`).pipe(
+      map(
+        response => { return (response as any); }
+        )
+    )
+  }
 }

@@ -22,7 +22,7 @@ import { DetalheComponent } from './personagens/detalhe/detalhe.component';
     PersonagensComponent,
     PersonagemComponent,
     BuscaComponent,
-    DetalheComponent
+    DetalheComponent,
   ],
   imports: [
     HttpModule,

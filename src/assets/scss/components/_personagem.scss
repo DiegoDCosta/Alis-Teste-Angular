@@ -12,3 +12,18 @@
     min-height: 250px;
     background-position: center center;
 }
+
+.card-badge {
+    @include flexbox;
+    .card-badge-btn {
+        @include border-radius(5px);
+        @include padding(0, 7px);
+        @include margin(0, 7px);
+        color: #ffffff;
+        text-transform: capitalize;
+    }
+}
+
+.btn-block {
+    width: 100%;
+}

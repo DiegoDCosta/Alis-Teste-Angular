@@ -40,3 +40,18 @@
         height: 150px;
     }
 }
+
+//refatorando a página de detalhes
+.collection-scrool {
+    overflow-y: scroll;
+    max-height: 300px;
+    height: auto;
+}
+
+.comics__cover {
+    margin-top: .5rem
+}
+
+.collection-item-link {
+    cursor: pointer;
+}

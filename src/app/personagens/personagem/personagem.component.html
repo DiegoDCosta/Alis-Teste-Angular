@@ -5,11 +5,15 @@
         </div>
         <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">
-                    {{ personagem.name }} <i class="material-icons right">more_vert</i>
-                  </span>
-            <p>
-                <a [routerLink]="['/detalhe', personagem.id]">Detalhes</a>
-            </p>
+                {{ personagem.name }} <i class="material-icons right">more_vert</i>
+            </span>
+            <div class="row">
+                <div class="card-badge">
+                    <a href="" class="card-badge-btn waves-effect yellow accent-4">wiki</a>
+                    <a href="" class="card-badge-btn waves-effect badge amber accent-3">comic link</a>
+                </div>
+            </div>
+            <button [routerLink]="['/', personagem.id]" class="waves-effect btn-block waves-light btn">detalhes</button>
         </div>
         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"> {{ personagem.name }} <i class="material-icons right">close</i></span>

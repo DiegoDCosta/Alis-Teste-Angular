@@ -8,7 +8,7 @@ import { PersonagensComponent } from "./personagens/personagens.component";
 
 const appRoutes: Routes = [
   { path: "", component: PersonagensComponent },
-  { path: "detalhe/:id", component: DetalheComponent },
+  { path: ":id", component: DetalheComponent },
   { path: "**", component: Error404Component }
 ];
 

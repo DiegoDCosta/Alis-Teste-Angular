@@ -19,7 +19,7 @@
                         <li class="collection-item avatar" *ngFor="let personagem of personagemResult">
                             <img src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="" class="circle">
                             <span class="title">{{personagem.name}}</span>
-                            <a [routerLink]="['/detalhe', personagem.id]" class="secondary-content ver__detalhe"><i class="material-icons">arrow_forward</i></a>
+                            <a [routerLink]="['/', personagem.id]" class="secondary-content ver__detalhe"><i class="material-icons">arrow_forward</i></a>
                         </li>
                     </ul>
                 </div>

@@ -14,7 +14,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class DetalheComponent implements OnInit {
 
   public detalhes: Personagem[];
-  //public comics = [];
+  public comics:any[] = [];
+  public comicsImage:string;
+
+  public dataInfo:any[]=[]; // remover teste
+  public dataImage:any;
+  public dataDescription: any;
   //public series = [];
 
   constructor(
@@ -26,7 +31,7 @@ export class DetalheComponent implements OnInit {
   ngOnInit() {
     this.spinner.show(); //loading
     this.getPersonagemById();
-    //this.getComics();
+    this.getComicsID();
   }
 
   getPersonagemById(){
@@ -38,16 +43,23 @@ export class DetalheComponent implements OnInit {
     this.spinner.hide(); //loading
   }
 
-  /*
-  // REMOVIDO PARA MELHORAR A PERFORMANCE DA CONSULTA POIS getPersonagemID(), JÁ CONTÉM AS MESMAS INFORMAÇÕES
-  //
-  getComics(){
+
+  getComicsID(){
     this.marvelService.getComics(this.router.snapshot.params[`id`],'comics')
     .subscribe(response => {
       this.comics = response;
-      console.log("Comics por ID -> ",this.comics)
+      this.comicsImage = `${this.comics[1].thumbnail.path}.${this.comics[1].thumbnail.extension}`;
+      console.log("Comics por ID -> ",this.comics);
     });
     this.spinner.hide(); //loading
   }
-  */
+
+  teste(url) {
+    this.marvelService.getPersonagemComic(url).subscribe( response  =>{
+      this.dataInfo = response.data.results[0]
+      this.dataDescription = `${response.data.results[0].description}`;
+      this.dataImage = `${response.data.results[0].thumbnail.path}.${response.data.results[0].thumbnail.extension}`;
+      console.log(this.dataInfo)
+    })
+  }
 }
