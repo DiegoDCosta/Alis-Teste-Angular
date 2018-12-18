@@ -1,9 +1,29 @@
-.personagem__busca__resultado {
-    .collection {
-        //border: none
-    }
+.ver__detalhe {
+    cursor: pointer;
+}
+
+.avatar-custom,
+.avatar-custom-itens {
+    @include flexbox;
+    @include align-items(center);
 }
 
 .ver__detalhe {
-    cursor: pointer;
+    @extend .avatar-custom;
+    @include justify-content(space-between);
+    width: 100%;
+    color: map-get($black, 1);
+}
+
+.busca__personagem {
+    color: map-get($white, 1);
+    &:focus {
+        background: transparent;
+        color: map-get($white, 1)
+    }
+}
+
+.buscar__titulo {
+    width: 100%;
+    text-align: center;
 }

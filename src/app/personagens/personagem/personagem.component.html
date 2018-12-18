@@ -17,7 +17,7 @@
         </div>
         <div class="card-reveal">
             <span class="card-title grey-text text-darken-4"> {{ personagem.name }} <i class="material-icons right">close</i></span>
-            <p *ngIf="personagem.description === ''"> Não foi encontrado descrição para este </p>
+            <p *ngIf="personagem.description === ''"> No description was found for this character </p>
             <p>{{ personagem?.description }}</p>
             <p>Número de série(s): {{ personagem.series.available }}</p>
             <p>Quadrinhos: {{ personagem.comics.available }}</p>

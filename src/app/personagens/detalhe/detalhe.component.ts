@@ -20,7 +20,7 @@ export class DetalheComponent implements OnInit {
   public dataInfo:any[]=[]; // remover teste
   public dataImage:any;
   public dataDescription: any;
-  //public series = [];
+  public notDescription: string = 'No description was found for this character';
 
   constructor(
     private marvelService: MarvelService,
@@ -35,31 +35,38 @@ export class DetalheComponent implements OnInit {
   }
 
   getPersonagemById(){
+    this.spinner.show(); //loading
     this.marvelService.getPersonagemID(this.router.snapshot.params[`id`])
     .subscribe(response => {
       this.detalhes = response //recebe personagens
-      console.log(response)
+      console.log(this.detalhes)
+      this.spinner.hide(); //loading
     });
-    this.spinner.hide(); //loading
+
   }
 
 
   getComicsID(){
+    this.spinner.show(); //loading
     this.marvelService.getComics(this.router.snapshot.params[`id`],'comics')
     .subscribe(response => {
       this.comics = response;
-      this.comicsImage = `${this.comics[1].thumbnail.path}.${this.comics[1].thumbnail.extension}`;
-      console.log("Comics por ID -> ",this.comics);
+      this.comicsImage = `${this.comics[0].thumbnail.path}.${this.comics[0].thumbnail.extension}`;
+      console.log(this.comics);
+      this.spinner.hide(); //loading
     });
-    this.spinner.hide(); //loading
+
   }
 
-  teste(url) {
+  //lista as revistas do detalhe dos comics
+  getDadosComicsDetalhes(url) {
+    this.spinner.show(); //loading
     this.marvelService.getPersonagemComic(url).subscribe( response  =>{
       this.dataInfo = response.data.results[0]
       this.dataDescription = `${response.data.results[0].description}`;
       this.dataImage = `${response.data.results[0].thumbnail.path}.${response.data.results[0].thumbnail.extension}`;
       console.log(this.dataInfo)
+      this.spinner.hide(); //loading
     })
   }
 }

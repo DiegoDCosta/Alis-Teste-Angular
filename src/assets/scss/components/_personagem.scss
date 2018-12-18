@@ -19,7 +19,7 @@
         @include border-radius(5px);
         @include padding(0, 7px);
         @include margin(0, 7px);
-        color: #ffffff;
+        color: map-get($white, 1);
         text-transform: capitalize;
     }
 }

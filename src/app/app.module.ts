@@ -14,6 +14,7 @@ import { PersonagensComponent } from './personagens/personagens.component';
 import { PersonagemComponent } from './personagens/personagem/personagem.component';
 import { BuscaComponent } from './personagens/busca/busca.component';
 import { DetalheComponent } from './personagens/detalhe/detalhe.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DetalheComponent } from './personagens/detalhe/detalhe.component';
     PersonagemComponent,
     BuscaComponent,
     DetalheComponent,
+    HomeComponent,
   ],
   imports: [
     HttpModule,

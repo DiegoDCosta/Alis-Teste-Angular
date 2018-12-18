@@ -8,7 +8,8 @@
             <!-- btn voltar -->
             <div class="personagem__detalhe__voltar ">
                 <a [routerLink]="[ '/'] " class="btn-floating pulse ">
-                    <i class="large material-icons ">arrow_back</i></a>
+                    <i class="large material-icons ">arrow_back</i>
+                </a>
             </div>
         </div>
     </div>
@@ -16,7 +17,6 @@
 
 <section class="detalhe__componente__item">
     <div class="row">
-
         <!-- coluna 1 -->
         <div class="col s12 l3">
             <div class="card card--marvel" *ngFor="let detalhe of detalhes">
@@ -25,25 +25,25 @@
                 </div>
                 <div class="card-content">
                     <div class="row">
-                        <div class="card-badge">
-                            <a href="" class="card-badge-btn waves-effect yellow accent-4">No. Series: ?</a>
-                            <a href="" class="card-badge-btn waves-effect badge amber accent-3">No. Comics: ?</a>
+                        <div class="card-badge" *ngFor="let detalhe of detalhes">
+                            <span class="card-badge-btn waves-effect badge brown darken-3">No. Series: {{ detalhe.series.available }} </span>
+                            <span class="card-badge-btn waves-effect badge brown darken-3">No. Comics: {{ detalhe.comics.available }} </span>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="card-badge">
-                            <span class="card-badge-btn waves-effect yellow accent-4">Series</span>
-                            <span href="" class="card-badge-btn waves-effect badge amber accent-3">Comics</span>
+                        <div class="card-badge" *ngFor="let detalhe of detalhes">
+                            <span class="card-badge-btn waves-effect badge deep-orange accent-4" *ngFor="let url of detalhe.urls"><a class="card-badge-btn-link" href="{{url.url}}" target="_blank">{{url.type}}</a>
+                                </span>
                         </div>
                     </div>
                     <div class="row">
-                        <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
+                        <p *ngIf="detalhe.description === ''"> {{ notDescription }}</p>
                         <p> {{ detalhe.description }} </p>
                     </div>
                 </div>
                 <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4"> {{ detalhe.name }} <i class="material-icons right">close</i></span>
-                    <p *ngIf="detalhe.description === ''"> Não foi encontrado descrição para este </p>
+                    <p *ngIf="detalhe.description === ''"> {{ notDescription }} </p>
                     <p>{{ detalhe?.description }}</p>
                     <p>Número de série(s): {{ detalhe.series.available }}</p>
                     <p>Quadrinhos: {{ detalhe.comics.available }}</p>
@@ -59,7 +59,7 @@
                 </li>
                 <div class=" collection-scrool">
                     <li class="collection-item" *ngFor="let comic of  detalhe.comics.items">
-                        <a class="collection-item-link" (click)="teste(comic.resourceURI)">
+                        <a class="collection-item-link" (click)="getDadosComicsDetalhes(comic.resourceURI)">
                             {{comic.name}}
                         </a>
                     </li>
@@ -71,9 +71,8 @@
                     <h4>Series</h4>
                 </li>
                 <div class=" collection-scrool">
-
                     <li class="collection-item" *ngFor="let serie of  detalhe.series.items">
-                        <a (click)="teste(serie.resourceURI)" class="collection-item-link">
+                        <a (click)="getDadosComicsDetalhes(serie.resourceURI)" class="collection-item-link">
                             {{serie.name}}
                         </a>
                     </li>

@@ -46,7 +46,6 @@ export class MarvelService {
         `${environment.MarvelEndpoint}/characters?nameStartsWith=${term}&orderBy=name&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
       .pipe(
         map(response => {
-          console.log(response)
           return (response as any).data.results;
         })
       );
@@ -64,7 +63,6 @@ export class MarvelService {
       )
       .pipe(
         map(response => {
-          console.log('personagem por ID ->' ,response)
           return (response as any).data.results;
         })
       );

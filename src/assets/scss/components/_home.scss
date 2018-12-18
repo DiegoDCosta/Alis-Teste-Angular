@@ -1,0 +1,27 @@
+.bg__home {
+    background: url('#{$path-img}/bg-home.jpg') no-repeat center center;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.cloud__animated {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('#{$path-img}/clouds.png') center center;
+    width: 100vw;
+    height: 100vh;
+    @include animation(clouds 80s linear infinite)
+}
+
+@keyframes clouds {
+    0% {
+        background-position: 0px;
+    }
+    100% {
+        background-position: 4100px;
+    }
+}
