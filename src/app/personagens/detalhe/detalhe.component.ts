@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-@import { SafeHtmlPipe } from '../../_pipes/safe-html.pipe';
 import { ActivatedRoute } from '@angular/router';
 import { Personagem } from "../../_models/personagem";
 
