@@ -70,3 +70,9 @@
 .collection-item-link {
     cursor: pointer;
 }
+
+.bg__detalhe {
+    @extend .bg__home;
+    background-position: center -200px;
+    height: 300px;
+}

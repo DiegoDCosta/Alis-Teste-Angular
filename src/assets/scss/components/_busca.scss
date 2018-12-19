@@ -17,6 +17,9 @@
 
 .busca__personagem {
     color: map-get($white, 1);
+    text-align: center;
+    font-size: 2rem!important;
+    text-transform: uppercase;
     &:focus {
         background: transparent;
         color: map-get($white, 1)
