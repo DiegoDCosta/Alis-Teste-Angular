@@ -15,6 +15,7 @@ import { PersonagemComponent } from './personagens/personagem/personagem.compone
 import { BuscaComponent } from './personagens/busca/busca.component';
 import { DetalheComponent } from './personagens/detalhe/detalhe.component';
 import { HomeComponent } from './home/home.component';
+import { SafeHtmlPipe } from './_pipes/safe-html.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeComponent } from './home/home.component';
     BuscaComponent,
     DetalheComponent,
     HomeComponent,
+    SafeHtmlPipe,
   ],
   imports: [
     HttpModule,
