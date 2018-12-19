@@ -23,13 +23,12 @@ export class BuscaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.campoDeBusca = this.fb.control('');
     this.formBusca = this.fb.group({
       campoDeBusca: this.campoDeBusca
     });
-
     this.buscarPersonagem();
-
   }
 
   buscarPersonagem(){

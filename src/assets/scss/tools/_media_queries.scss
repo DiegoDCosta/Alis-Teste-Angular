@@ -1,5 +1,17 @@
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+    .buscar__titulo {
+        font-size: 2.5rem;
+        line-height: 50px;
+        margin-top: 0;
+    }
+    .bg__home {
+        min-height: 100%;
+    }
+    .card--marvel {
+        margin: 0!important
+    }
+}
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) and (max-width: 767.98px) {}
@@ -12,3 +24,15 @@
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {}
+
+///
+// max device (para não repetir queries)
+///
+@media (max-width: 991px) {
+    .personagem__busca__resultado {
+        .collection {
+            overflow-y: scroll;
+            height: 50vh;
+        }
+    }
+}
