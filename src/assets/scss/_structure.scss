@@ -1,4 +1,8 @@
 //reset materialize css
+body {
+    overflow-x: hidden;
+}
+
 .row {
     @include padding(15px, 0)
 }
@@ -10,4 +14,12 @@
 
 .p-0 {
     padding: 0 !important;
+}
+
+.spinner__loading {
+    position: absolute!important;
+    top: 0!important;
+    left: 0!important;
+    width: 100%!important;
+    height: 100%!important;
 }
