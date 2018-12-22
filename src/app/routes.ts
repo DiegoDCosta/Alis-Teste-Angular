@@ -3,14 +3,13 @@ import { ModuleWithProviders } from "@angular/compiler/src/core";
 
 import { Error404Component } from "./error404/error404.component";
 import { DetalheComponent } from "./personagens/detalhe/detalhe.component";
-import { PersonagensComponent } from "./personagens/personagens.component";
 import { HomeComponent } from "./home/home.component";
 
 
 const appRoutes: Routes = [
   //{ path: "", component: PersonagensComponent },
   { path: "", component: HomeComponent },
-  { path: ":id", component: DetalheComponent },
+  { path: "detail/:id", component: DetalheComponent },
   { path: "**", component: Error404Component }
 ];
 
