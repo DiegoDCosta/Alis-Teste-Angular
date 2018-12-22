@@ -4,7 +4,7 @@ module.exports = function(grunt) {
         //DOCUMENTAÇÃO DO SASS
         sassdoc: {
             default: {
-                src: './src/assets/css/**/*.scss'
+                src: './src/assets/scss/**/*.scss'
             },
         },
     });

@@ -29,6 +29,14 @@ export class BuscaComponent implements OnInit {
       campoDeBusca: this.campoDeBusca
     });
     this.buscarPersonagem();
+
+    //adiciona class no body da busca
+    document.body.classList.add('bgBusca')
+  }
+
+  ngOnDestroy() {
+    //remove class no body da busca
+    document.body.classList.remove('bgBusca')
   }
 
   buscarPersonagem(){
@@ -38,7 +46,7 @@ export class BuscaComponent implements OnInit {
       )
     ).subscribe(
       (response => {
-        this.personagemResult = response
+        this.personagemResult = response;
         console.log('personagem buscado ->',response);
       })
     )

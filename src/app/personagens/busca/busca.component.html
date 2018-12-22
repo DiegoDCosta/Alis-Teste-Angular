@@ -11,24 +11,31 @@
                 </form>
             </div>
         </section>
+    </div>
+</section>
 
-        <!-- MOSTRA O THUMBNAIL DA BUSCA -->
-        <section *ngIf="campoDeBusca.value != ''" class="personagem__busca__resultado">
-            <div class="row">
-                <div class="col s12">
-                    <ul class="collection">
-                        <li class="collection-item avatar avatar-custom" *ngFor="let personagem of personagemResult">
-                            <a [routerLink]="['/', personagem.id]" class="ver__detalhe">
-                                <div class="avatar-custom-itens">
-                                    <img src="{{personagem.thumbnail.path}}.{{personagem.thumbnail.extension}}" alt="" class="circle">
-                                    <span class="title">{{personagem.name}}</span>
-                                </div>
-                                <i class="material-icons">send</i>
-                            </a>
-                        </li>
-                    </ul>
+<!-- CARDS DA RESPOSTA DA BUSCA -->
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col s12 m6 l4 xl3" *ngFor="let personagem of personagemResult">
+                <div class="card card--marvel">
+                    <div class="card-image waves-effect waves-block waves-light card--marvel-pic" [ngStyle]="{'background-image': 'url(' + personagem.thumbnail.path +'.'+ personagem.thumbnail.extension + ')'}"></div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">
+                        {{ personagem.name }} <i class="material-icons right">more_vert</i>
+                    </span>
+                        <button [routerLink]="['/', personagem.id]" class="waves-effect btn-block waves-light btn">detalhes</button>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"> {{ personagem.name }} <i class="material-icons right">close</i></span>
+                        <p *ngIf="personagem.description === ''"> No description was found for this character </p>
+                        <p>{{ personagem?.description }}</p>
+                        <p>Número de série(s): {{ personagem.series.available }}</p>
+                        <p>Quadrinhos: {{ personagem.comics.available }}</p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 </section>
