@@ -16,6 +16,7 @@ export class BuscaComponent implements OnInit {
   //form de busca de personagems
   formBusca: FormGroup;
   campoDeBusca: FormControl;
+  errorMsg: any;
 
   constructor(
     private marvelService:MarvelService,
@@ -48,8 +49,16 @@ export class BuscaComponent implements OnInit {
       (response => {
         this.personagemResult = response;
         console.log('personagem buscado ->',response);
-      })
+      }),
+      error => {
+        this.errorMsg = error
+      }
     )
   }
 
+  //remove a msg de erro do DOM
+  toogle(){
+    let el = document.getElementById('errorMsg');
+    console.log(el.parentNode.removeChild(el));
+  }
 }

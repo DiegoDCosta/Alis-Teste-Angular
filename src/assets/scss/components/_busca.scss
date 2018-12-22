@@ -45,3 +45,26 @@
     top: 0;
     left: 0;
 }
+
+.error__notification {
+    @include flexbox;
+    @include justify-content(space-between);
+    @include padding(10px,
+    10px);
+    z-index: 99999;
+    position: relative;
+    width: 100%;
+    background-color: map-get($black, 1);
+    color: map-get($white, 1);
+    .error__notification__close {
+        cursor: pointer;
+    }
+    .error__notification__btn {
+        @include padding(10px,
+        10px)
+    }
+}
+
+.d-none {
+    display: none;
+}

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { MatButtonModule, MatCheckboxModule } from "@angular/material";
-import { MatTabsModule } from '@angular/material/tabs';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 
@@ -8,7 +8,7 @@ import { MatBadgeModule } from '@angular/material/badge';
   imports: [
     MatButtonModule,
     MatCheckboxModule,
-    MatTabsModule,
+    MatSnackBarModule,
     MatCardModule,
     MatBadgeModule
   ],
@@ -16,7 +16,7 @@ import { MatBadgeModule } from '@angular/material/badge';
   exports:[
     MatButtonModule,
     MatCheckboxModule,
-    MatTabsModule,
+    MatSnackBarModule,
     MatCardModule,
     MatBadgeModule
   ]

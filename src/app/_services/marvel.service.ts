@@ -2,8 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Md5 } from "ts-md5/dist/md5";
 import { environment } from "../../environments/environment";
-import { Observable, throwError  } from "rxjs";
-import { retry, catchError } from 'rxjs/operators';
+import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 
 import { Personagem } from "../_models/personagem";
@@ -46,8 +45,6 @@ export class MarvelService {
       .get<any>(
         `${environment.MarvelEndpoint}/characters?nameStartsWith=${term}&orderBy=name&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
       .pipe(
-        retry(5),
-        catchError(this.handleError),
         map(response => {
           return (response as any).data.results;
         })
@@ -65,8 +62,6 @@ export class MarvelService {
         }&hash=${this.hash}`
       )
       .pipe(
-        retry(5),
-        catchError(this.handleError),
         map(response => {
           return (response as any).data.results;
         })
@@ -83,8 +78,6 @@ export class MarvelService {
         }&hash=${this.hash}`
       )
       .pipe(
-        retry(5),
-        catchError(this.handleError),
         map(response => {
           return (response as any).data.results;
         })
@@ -94,26 +87,10 @@ export class MarvelService {
   getPersonagemComic(url) {
     return this.http.get(`${url}?&ts=${this.timeStamp}&apikey=${environment.PublicKey}&hash=${this.hash}`)
     .pipe(
-      retry(5),
-      catchError(this.handleError),
       map(
         response => { return (response as any); }
         )
     )
-  }
-
-  // TRATAMENTO DE ERROR
-  handleError(error) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      errorMessage = `Error: ${error.error.message}`;
-    } else {
-      // server-side error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    window.alert(errorMessage);
-    return throwError(errorMessage);
   }
  }
 

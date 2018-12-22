@@ -9,7 +9,14 @@
                         <input type="text" class="busca__personagem" id="buscaPersonagem" placeholder="Search" formControlName="campoDeBusca" value="" />
                     </div>
                 </form>
+                <div *ngIf="errorMsg" id="errorMsg">
+                    <div class="error__notification">
+                        <div class="error__notification__msg">{{ errorMsg }}</div>
+                        <div class="error__notification__close" (click)="toogle()"> <i class="tiny material-icons">close</i> </div>
+                    </div>
+                </div>
             </div>
+
         </section>
     </div>
 </section>
